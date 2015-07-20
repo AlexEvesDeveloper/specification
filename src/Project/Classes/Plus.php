@@ -22,6 +22,9 @@ class Plus extends AbstractSpecification
 
     public function isSatisfiedBy(Reference $reference)
     {
-        return $this->left->isSatisfiedBy($reference) && $this->right->isSatisfiedBy($reference);
+        $left = $this->left->isSatisfiedBy($reference);
+        $right = $this->right->isSatisfiedBy($reference);
+
+        return $left && $right;
     }
 }
